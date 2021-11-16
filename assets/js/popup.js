@@ -41,7 +41,22 @@ function closeAllToastNotifications() {
     ToastNotificationIdsList = [];
   }
 
-//-----------service worker JS API-----------------------------------------
+//--------Document JS Extension API ----------------------------------------- 
+notifyExtDoc.addEventListener( 'click', () => {
+
+	chrome.notifications.create(
+		'',
+		{
+			type: 'basic',
+			title: 'Notify!',
+			message: text.value || 'Notify!',
+			iconUrl: './assets/icons/icon128.png',
+		}
+	);
+} );
+
+
+//-----------service worker notification API-----------------------------------------
 
 notifySwExt.addEventListener( 'click', () => {
 	chrome.runtime.sendMessage( '', {
@@ -50,7 +65,7 @@ notifySwExt.addEventListener( 'click', () => {
 	});
 } );
 
-//--------Document JS Extension API ----------------------------------------- 
+//--------Document notification object ----------------------------------------- 
 notifyToast.addEventListener('click', () => {
 	showToast(text.value || 'Notify!');
 });
