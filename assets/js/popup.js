@@ -51,23 +51,16 @@ notifySwExt.addEventListener( 'click', () => {
 } );
 
 //--------Document JS Extension API ----------------------------------------- 
-notifyExtDoc.addEventListener( 'click', () => {
-
-	chrome.notifications.create(
-		'',
-		{
-			type: 'basic',
-			title: 'Notify!',
-			message: text.value || 'Notify!',
-			iconUrl: './assets/icons/icon128.png',
-		}
-	);
-} );
-
-//--------JS notification API browser/extension agnostic-----------------------------------------------
 notifyToast.addEventListener('click', () => {
 	showToast(text.value || 'Notify!');
 });
+
+let ToastNotificationIdsList = [];
+let toastId = localStorage.getItem("toastId");
+if (toastId === null) {
+  toastId = 1;
+  localStorage.setItem("toastId", toastId);
+}
 
 function showToast(message) {
 	
@@ -107,16 +100,7 @@ function showToast(message) {
 
 }
 
-let ToastNotificationIdsList = [];
-let toastId = localStorage.getItem("toastId");
-if (toastId === null) {
-  toastId = 1;
-  localStorage.setItem("toastId", toastId);
-}
-
-
-function logMessage(message) {
-	log.innerHTML += `${message}<br/>`;
-}
-
+  function logMessage(message) {
+    log.innerHTML += `${message}<br/>`;
+  }
   
