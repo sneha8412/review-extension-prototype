@@ -7,24 +7,6 @@ const notifyToast = document.getElementById('notify-toast');
 const clearButton = document.getElementById('notify-reset');
 const log = document.getElementById("log");
 
-/*
-chrome.storage.local.get( ['notifyCount'], data => {
-	let value = data.notifyCount || 0;
-	counter.innerHTML = value;
-} );
-
-chrome.storage.onChanged.addListener( ( changes, namespace ) => {
-	if ( changes.notifyCount ) {
-		let value = changes.notifyCount.newValue || 0;
-		counter.innerHTML = value;
-	}
-});
-
-reset.addEventListener( 'click', () => {
-	chrome.storage.local.clear();
-	text.value = '';
-} );
-*/
 //------------ clear button-----------------------------------------------
 clearButton.addEventListener('click', () => {
 
@@ -41,7 +23,7 @@ function closeAllToastNotifications() {
     ToastNotificationIdsList = [];
   }
 
-//--------Document JS Extension API ----------------------------------------- 
+//--------Document Notification API ----------------------------------------- 
 notifyExtDoc.addEventListener( 'click', () => {
 
 	chrome.notifications.create(
@@ -50,13 +32,13 @@ notifyExtDoc.addEventListener( 'click', () => {
 			type: 'basic',
 			title: 'Notify!',
 			message: text.value || 'Notify!',
-			iconUrl: './assets/icons/icon128.png',
+			iconUrl: './assets/icons/pikachu-folder-128.png',
 		}
 	);
 } );
 
 
-//-----------service worker notification API-----------------------------------------
+//-----------Extension service worker notification API-----------------------------------------
 
 notifySwExt.addEventListener( 'click', () => {
 	chrome.runtime.sendMessage( '', {
@@ -64,6 +46,7 @@ notifySwExt.addEventListener( 'click', () => {
 		message: text.value
 	});
 } );
+
 
 //--------Document notification object ----------------------------------------- 
 notifyToast.addEventListener('click', () => {
@@ -82,10 +65,10 @@ function showToast(message) {
 	const notification = new Notification(
 		`${message}-${toastId}`, 
 		{ 
-			body: `${message} ${toastId}`, 
+			body: `${message}`, 
 			tag: "Toast Notification From Doc", 
-			icon: "./assets/icons/icon16.png", 
-			image: "./assets/icons/icon128.png", 
+			icon: "./assets/icons/Pikachu-128.png", 
+			image: "./assets/icons/pikachu-image.jpg", 
 			requireInteraction: false
 		});
 
