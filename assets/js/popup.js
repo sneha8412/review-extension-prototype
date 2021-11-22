@@ -17,7 +17,7 @@ clearButton.addEventListener('click', () => {
 });
 
 function closeAllToastNotifications() {
-    ToastNotificationIdsList.forEach((toast) => {
+    ToastNotificationIdsList?.forEach((toast) => {
       toast.close();
     });
     ToastNotificationIdsList = [];
@@ -62,6 +62,8 @@ if (toastId === null) {
 
 function showToast(message) {
 	
+	closeAllToastNotifications();
+
 	const notification = new Notification(
 		`${message}-${toastId}`, 
 		{ 
