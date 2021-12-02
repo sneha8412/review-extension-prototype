@@ -30,8 +30,8 @@ notifyExtDoc.addEventListener( 'click', () => {
 		'',
 		{
 			type: 'basic',
-			title: 'Notify!',
-			message: text.value || 'Notify!',
+			title: 'Notify notification title!',
+			message: text.value || 'Notify message!',
 			iconUrl: './assets/icons/pikachu-folder-128.png',
 		}
 	);
@@ -50,7 +50,7 @@ notifySwExt.addEventListener( 'click', () => {
 
 //--------Document notification object ----------------------------------------- 
 notifyToast.addEventListener('click', () => {
-	showToast(text.value || 'Notify!');
+	showToast(text.value || 'Notify message!');
 });
 
 let ToastNotificationIdsList = [];
@@ -65,7 +65,8 @@ function showToast(message) {
 	closeAllToastNotifications();
 
 	const notification = new Notification(
-		`${message}-${toastId}`, 
+		"Notify Notification title!",
+		// `${message}-${toastId}`, 
 		{ 
 			body: `${message}`, 
 			tag: "Toast Notification From Doc", 

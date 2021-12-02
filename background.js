@@ -4,10 +4,19 @@ chrome.runtime.onMessage.addListener( data => {
 				'',
 				{
 					type: 'basic',
-					title: 'Notify!',
-					message: data.message || 'Notify!',
-					iconUrl: './assets/icons/icon128.png',
+					title: 'Notify notification title!',
+					message: data.message || 'Notify message!',
+					iconUrl: './assets/icons/pika-128.png',
 				}
 			);
+			// const notification = new Notification(
+			// 	`${data.message}`, 
+			// 	{ 
+			// 		body: `${data.message}`, 
+			// 		tag: "Toast Notification From Service worker", 
+			// 		icon: "./assets/icons/Pikachu-128.png", 
+			// 		image: "./assets/icons/pikachu-image.jpg", 
+			// 		requireInteraction: false
+			// 	});
 	}
   });
