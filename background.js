@@ -4,8 +4,8 @@ chrome.runtime.onMessage.addListener( data => {
 				'',
 				{
 					type: 'basic',
-					title: 'Notify notification title!',
-					message: data.message || 'Notify message!',
+					title: 'Notification from service worker!',
+					message: data.message || 'Message!',
 					iconUrl: './assets/icons/pika-128.png',
 				}
 			);
