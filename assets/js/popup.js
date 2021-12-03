@@ -39,7 +39,7 @@ notifyExtDoc.addEventListener( 'click', () => {
 } );
 
 
-//-----------Extension service worker notification API-----------------------------------------
+//-----------Extension service worker PERSISTENT AND NON-PERSISTENT -----------------------------------------
 
 notifyFromSWNonPersistent.addEventListener( 'click', () => {
 	chrome.runtime.sendMessage( '', {

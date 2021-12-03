@@ -8,7 +8,7 @@ chrome.runtime.onMessage.addListener( data => {
 		  badge: './assets/icons/icon128.png'
 		};
 
-		self.registration.showNotification(title, options);
+		registration.showNotification(title, options);
 	}
 	
 	if ( data.type === 'non-persistent' ) {
