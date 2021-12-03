@@ -1,5 +1,6 @@
 const text = document.getElementById( 'notify-text' );
-const notifySwExt = document.getElementById( 'notify-sw-ext' );
+const notifyFromSWNonPersistent = document.getElementById( 'notify-sw-persist' );
+const notifyFromSWPersistent = document.getElementById( 'notify-sw-persist' );
 const reset = document.getElementById( 'notify-reset' );
 const counter = document.getElementById( 'notify-count' );
 const notifyExtDoc = document.getElementById('notify-doc-ext');
@@ -40,9 +41,16 @@ notifyExtDoc.addEventListener( 'click', () => {
 
 //-----------Extension service worker notification API-----------------------------------------
 
-notifySwExt.addEventListener( 'click', () => {
+notifyFromSWNonPersistent.addEventListener( 'click', () => {
 	chrome.runtime.sendMessage( '', {
-		type: 'notification',
+		type: 'non-persistent',
+		message: text.value
+	});
+} );
+
+notifyFromSWPersistent.addEventListener( 'click', () => {
+	chrome.runtime.sendMessage( '', {
+		type: 'persistent',
 		message: text.value
 	});
 } );

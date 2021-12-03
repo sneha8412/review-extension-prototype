@@ -10,26 +10,31 @@
       <div class="notify-form">
         <label for="text">Notification</label>
         <textarea name="text" id="notify-text" placeholder="Let's notify!"></textarea>
+        <div class=notify-buttons>
+          <!-- <p>Total: <span id="notify-count"></span></p> -->
+          <div>
+            <button class="button primary" id="notify-sw-persist">
+              SW-showNot
+            </button>
+            <button class="button primary" id="notify-sw-nonpersist">
+              SW-chrome.not
+            </button>
+            <button class="button primary" id="notify-doc-ext">
+              Doc-chrome.not
+            </button>
+            <button class="button primary" id="notify-toast">
+              Doc-new Not
+            </button>
+          </div>
+        </div>
       </div>
-      <div class=notify-buttons>
-        <!-- <p>Total: <span id="notify-count"></span></p> -->
-
-        <button class="button primary" id="notify-reset">
-          Clear
-        </button>
-        <br/>
-        <button class="button primary" id="notify-sw-ext">
-          SW - Ext API
-        </button>
-        <br/>
-        <button class="button primary" id="notify-doc-ext">
-          Doc - Ext API
-        </button>
-        <button class="button primary" id="notify-toast">
-          Doc - Toast
-        </button>
+      <div>
+        <span>Toast Notification Log</span>
+        <div id="log">
       </div>
-      <div id="log">
+      <button class="button primary" id="notify-reset">
+        Clear Toast Log
+      </button>
     </div>
    </div>
    <script src="assets/js/popup.js"></script>
