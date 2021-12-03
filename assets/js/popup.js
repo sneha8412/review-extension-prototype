@@ -70,7 +70,7 @@ function showToast(message) {
 		{ 
 			body: `${message}`, 
 			tag: "Toast Notification From Doc", 
-			icon: "./assets/icons/Pikachu-128.png", 
+			icon: "./assets/icons/Pika-toast-128.png", 
 			image: "./assets/icons/pikachu-image.jpg", 
 			requireInteraction: false
 		});
