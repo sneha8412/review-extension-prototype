@@ -10,15 +10,15 @@ const clearShowNot = document.getElementById('clear-notify-sw-persist');
 const clearSwChromeNot = document.getElementById('clear-notify-sw-nonpersist');
 const clearDocChromeNot = document.getElementById('clear-doc-chrome-not');
 
-const log = document.getElementById("log");
+const log = document.getElementById('log');
 
 //------------ clear button-----------------------------------------------
 clearButton.addEventListener('click', () => {
 
 	closeAllToastNotifications();
 	toastId = 1;
-	log.innerHTML = '';
 	localStorage.clear();
+	log.innerHTML = '';
 });
 
 function closeAllToastNotifications() {
@@ -130,7 +130,7 @@ function showToast(message) {
 
 }
 
-  function logMessage(message) {
-    log.innerHTML += `${message}<br/>`;
-  }
+function logMessage(message) {
+	log.innerHTML += `${message}<br/>`;
+}
   
