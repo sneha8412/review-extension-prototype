@@ -95,7 +95,7 @@ function showToast(message) {
 
 	const notification = new Notification(
 		"Toast Notification title!",
-		// `${message}-${toastId}`, 
+
 		{ 
 			body: `${message}`, 
 			tag: "Toast Notification From Doc", 
