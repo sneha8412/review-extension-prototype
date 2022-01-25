@@ -94,7 +94,7 @@ function showToast(message) {
 	closeAllToastNotifications();
 
 	const notification = new Notification(
-		"Toast Notification title!",
+		"New Notification title!",
 
 		{ 
 			body: `${message}`, 
