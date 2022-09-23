@@ -1,26 +1,22 @@
 {
-  "name": "Extension name!",
-  "description": "A Google Chrome extension!",
+  "name": "Edge Website Reviews",
+  "description": "Edge extension prototype for Edge browser reviews!",
   "version": "1.0",
+  "author" : "Sneha Agarwal",
   "manifest_version": 3,
-  "permissions": [
-		"contextMenus",
-		"notifications",
-		"storage"
-	],
-	"background": {
-	  "service_worker": "background.js"
-	},
+  "permissions": ["activeTab", "tabs"],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["/assets/js/review.js"]
+    }],
   "icons": {
-    "48": "/assets/icons/icon48.png",
-    "128": "/assets/icons/icon128.png"
+    "48": "/assets/icons/Snowman48.png",
+    "128": "/assets/icons/pika-128.png"
   },
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-    "32":"/assets/icons/icon32.png",
-    "48": "/assets/icons/icon48.png",
-    "128": "/assets/icons/icon128.png"
-    }
+  "action" : {
+    "default_popup" : "review.html"
   }
+
 }
